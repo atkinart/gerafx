@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="ru.gera.Main">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: RED;" AnchorPane.bottomAnchor="5.0"
+              AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox prefHeight="29.0" prefWidth="560.0" spacing="2.0">
+                    <children>
+                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0" text="1">
+                            <HBox.margin>
+                                <Insets top="6.0"/>
+                            </HBox.margin>
+                            <padding>
+                                <Insets left="5.0"/>
+                            </padding>
+                        </Label>
+                        <TextField>
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="qweqweq"/>
+                                        <MenuItem mnemonicParsing="false" text="aaaaa"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </TextField>
+                        <TextField editable="false" mouseTransparent="true"/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <CheckBox contentDisplay="CENTER" depthTest="DISABLE" ellipsisString="" mnemonicParsing="false">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="2.0" top="5.0"/>
+                            </HBox.margin>
+                        </CheckBox>
+                        <Button mnemonicParsing="false" text="Button"/>
+                    </children>
+                </HBox>
+                <HBox prefHeight="29.0" prefWidth="560.0" spacing="2.0">
+                    <children>
+                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0" text="2">
+                            <padding>
+                                <Insets left="5.0" top="5.0"/>
+                            </padding>
+                        </Label>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <CheckBox contentDisplay="CENTER" depthTest="DISABLE" ellipsisString="" mnemonicParsing="false">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="2.0" top="5.0"/>
+                            </HBox.margin>
+                        </CheckBox>
+                        <Button mnemonicParsing="false" text="Button"/>
+                    </children>
+                </HBox>
+                <HBox prefHeight="29.0" prefWidth="560.0" spacing="2.0">
+                    <children>
+                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0" text="3">
+                            <padding>
+                                <Insets left="5.0" top="5.0"/>
+                            </padding>
+                        </Label>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <TextField/>
+                        <CheckBox contentDisplay="CENTER" depthTest="DISABLE" ellipsisString="" mnemonicParsing="false">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="2.0" top="5.0"/>
+                            </HBox.margin>
+                        </CheckBox>
+                        <Button mnemonicParsing="false" text="Button"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="5.0"/>
+            </padding>
+        </VBox>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0"
+                 AnchorPane.rightAnchor="2.0">
+            <items>
+                <ProgressBar prefWidth="200.0" progress="0.0"/>
+                <ToggleButton mnemonicParsing="false" text="ToggleButton"/>
+            </items>
+        </ToolBar>
+    </children>
+</AnchorPane>

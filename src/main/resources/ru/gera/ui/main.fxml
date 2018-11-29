@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="768.0" prefWidth="1024.0"
+            style="-fx-background-color: BLUE;" xmlns="http://javafx.com/javafx/8"
+            fx:controller="ru.gera.ui.MainController">
+    <children>
+        <BorderPane layoutX="6.0" layoutY="29.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button maxWidth="29.0" mnemonicParsing="false" prefHeight="29.0" text="Button"/>
+                    </items>
+                </ToolBar>
+            </top>
+            <bottom>
+                <TitledPane animated="false" text="Исходные параметры" BorderPane.alignment="CENTER">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TitledPane animated="false" collapsible="false" layoutX="596.0" layoutY="14.0"
+                                            prefWidth="300.0" text="Исходные точки" AnchorPane.bottomAnchor="0.0"
+                                            AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                    <content>
+                                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0"
+                                                    prefWidth="300.0">
+                                            <content>
+                                                <VBox prefHeight="130.0" prefWidth="300.0">
+                                                    <children>
+                                                        <TableView fx:id="doteTable" editable="true"
+                                                                   fixedCellSize="20.0" prefHeight="200.0"
+                                                                   prefWidth="200.0" style="-fx-cell-size: 30px;"
+                                                                   styleClass="table-row-cell">
+                                                            <columns>
+                                                                <TableColumn fx:id="indexColumn" maxWidth="100.0"
+                                                                             prefWidth="90.0" resizable="false"
+                                                                             sortable="false"
+                                                                             style="-fx-cell-size: 30px;"
+                                                                             styleClass="table-row-cell"
+                                                                             text="Номер узла"/>
+                                                                <TableColumn maxWidth="70.0" prefWidth="70.0"
+                                                                             resizable="false" sortable="false"
+                                                                             style="-fx-cell-size: 30px;"
+                                                                             styleClass="table-row-cell" text="X"
+                                                                             fx:id="xColumn"/>
+                                                                <TableColumn fx:id="yColumn" maxWidth="70.0"
+                                                                             prefWidth="70.0" resizable="false"
+                                                                             sortable="false"
+                                                                             style="-fx-cell-size: 30px;"
+                                                                             styleClass="table-row-cell" text="Y"/>
+                                                                <TableColumn fx:id="zColumn" maxWidth="70.0"
+                                                                             prefWidth="70.0" resizable="false"
+                                                                             sortable="false"
+                                                                             style="-fx-cell-size: 30px;"
+                                                                             styleClass="table-row-cell" text="Z"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <Button fx:id="addDote" mnemonicParsing="false"
+                                                                prefWidth="300.0" text="Добавить"
+                                                                textAlignment="CENTER"/>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </ScrollPane>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane collapsible="false" graphicTextGap="5.0" prefHeight="200.0"
+                                            prefWidth="200.0" text="Расчетные размеры (мм)"
+                                            AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="320.0"
+                                            AnchorPane.topAnchor="0.0">
+                                    <content>
+                                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0"
+                                                    prefWidth="200.0">
+                                            <content>
+                                                <VBox fx:id="sizeVBox" prefHeight="130.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Button fx:id="addSize" mnemonicParsing="false"
+                                                                prefWidth="200.0" text="Добавить"/>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </ScrollPane>
+                                    </content>
+                                </TitledPane>
+                                <FlowPane layoutX="44.0" layoutY="-10.0" prefHeight="200.0" prefWidth="350.0" vgap="2.0"
+                                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                          AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label prefWidth="290.0" text="Режим работы программы"/>
+                                        <TextField prefWidth="60.0"/>
+                                        <Label prefWidth="290.0" text="Общее кол-во точек (узлов) в конструкции"/>
+                                        <TextField prefWidth="60.0"/>
+                                        <Label prefWidth="290.0" text="Кол-во точек ориентации по кривизне"/>
+                                        <TextField prefWidth="60.0"/>
+                                        <Label prefWidth="290.0" text="Общее число искомых расстояний"/>
+                                        <TextField prefWidth="60.0"/>
+                                    </children>
+                                </FlowPane>
+                                <Button layoutX="949.0" layoutY="143.0" mnemonicParsing="false" prefWidth="100.0"
+                                        text="Сохранить" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </bottom>
+            <center>
+                <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <SplitPane dividerPositions="0.6" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <TitledPane collapsible="false" prefHeight="200.0" prefWidth="200.0"
+                                                    text="Процедуры геометрического расчета"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <TitledPane collapsible="false" prefHeight="200.0" prefWidth="200.0"
+                                                    text="Процедуры графического расчета" AnchorPane.bottomAnchor="0.0"
+                                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0"/>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+        <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ToolBar layoutX="40.0" layoutY="728.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <items>
+                <Button mnemonicParsing="false" text="Button"/>
+            </items>
+        </ToolBar>
+    </children>
+</AnchorPane>
