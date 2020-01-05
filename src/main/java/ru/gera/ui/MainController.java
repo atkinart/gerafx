@@ -30,26 +30,27 @@ public class MainController {
     private TableColumn<Dote, String> yColumn;
     @FXML
     private TableColumn<Dote, String> zColumn;
-    
+    @FXML
+    private TableColumn<Dote, String> removeRecord;
     @FXML
     public void initialize() {
-        
+
         indexColumn.setCellValueFactory(new PropertyValueFactory<>("index"));
         xColumn.setCellValueFactory(new PropertyValueFactory<>("x"));
         yColumn.setCellValueFactory(new PropertyValueFactory<>("y"));
         zColumn.setCellValueFactory(new PropertyValueFactory<>("z"));
-        
+
         indexColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         xColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         yColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         zColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        
+
         doteTable.setItems(list);
-        
+
         addSize.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             sizeVBox.getChildren().add(0, new SizePane(sizeVBox, "1"));
         });
-        
+
         addDote.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> list.add(new Dote()));
     }
 }

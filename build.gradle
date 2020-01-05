@@ -1,29 +1,41 @@
-buildscript {
-    ext {
-        springBootVersion = '2.0.5.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-        jcenter()
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE'
-        classpath 'com.netflix.nebula:nebula-release-plugin:7.0.1'
+//buildscript {
+//    ext {
+//        springBootVersion = '2.0.5.RELEASE'
+//    }
+//    repositories {
+//        mavenCentral()
+//        jcenter()
+//        maven { url "https://plugins.gradle.org/m2/" }
+//    }
+//    dependencies {
+//        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+//        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+//        classpath 'io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE'
+//        classpath 'com.netflix.nebula:nebula-release-plugin:7.0.1'
+//
+//    }
+//}
 
-    }
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'javafx-gradle-plugin'
-apply plugin: 'nebula.nebula-release'
-apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'javafx-gradle-plugin'
+//apply plugin: 'nebula.nebula-release'
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
 
 group = 'ru.gera'
+
+sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -33,17 +45,24 @@ repositories {
     }
 }
 
-dependencyManagement {
-    dependencies {
-        imports {
-            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-        }
-    }
+javafx {
+    version = '11'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    configuration = 'compileOnly'
+    mainClassName = 'ru.gera.GERAFXApplication'
 }
+
+//dependencyManagement {
+//    dependencies {
+//        imports {
+//            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+//        }
+//    }
+//}
 
 dependencies{
 
-    compile files('libs/jgera.jar')
+//    compile files('libs/jgera.jar')
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 
@@ -51,13 +70,13 @@ dependencies{
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
-jfx {
-    // minimal requirement for jfxJar-task
-    mainClass = 'full.qualified.nameOf.TheMainClass'
-
-    // minimal requirement for jfxNative-task
-    vendor = 'YourName'
-}
+//jfx {
+//    // minimal requirement for jfxJar-task
+//    mainClass = 'full.qualified.nameOf.TheMainClass'
+//
+//    // minimal requirement for jfxNative-task
+//    vendor = 'YourName'
+//}
 
 wrapper{
     gradleVersion = '4.10.1'

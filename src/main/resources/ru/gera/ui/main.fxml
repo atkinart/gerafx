@@ -89,13 +89,13 @@
                                           AnchorPane.topAnchor="0.0">
                                     <children>
                                         <Label prefWidth="290.0" text="Режим работы программы"/>
-                                        <TextField prefWidth="60.0"/>
+                                        <TextField prefWidth="60.0" text="1"/>
                                         <Label prefWidth="290.0" text="Общее кол-во точек (узлов) в конструкции"/>
-                                        <TextField prefWidth="60.0"/>
+                                        <TextField prefWidth="60.0" text="0"/>
                                         <Label prefWidth="290.0" text="Кол-во точек ориентации по кривизне"/>
-                                        <TextField prefWidth="60.0"/>
+                                        <TextField prefWidth="60.0" text="0"/>
                                         <Label prefWidth="290.0" text="Общее число искомых расстояний"/>
-                                        <TextField prefWidth="60.0"/>
+                                        <TextField prefWidth="60.0" text="0"/>
                                     </children>
                                 </FlowPane>
                                 <Button layoutX="949.0" layoutY="143.0" mnemonicParsing="false" prefWidth="100.0"
